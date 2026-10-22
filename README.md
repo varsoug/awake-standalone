@@ -1,6 +1,6 @@
 <div align="center">
 
-**🇬🇧 English** | [🇷🇺 Русский](README.ru.md)
+**🇬🇧 English** | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | [🇰🇷 한국어](README.ko.md) | [🇷🇺 Русский](README.ru.md) | [🇺🇦 Українська](README.uk.md)
 
 <img src="docs/logo.png" width="112" alt="Awake logo">
 
@@ -41,7 +41,7 @@ self-contained app**: download one file, run it, and control everything from the
 | 🖥️ **Screen control** | Keep only the system awake, or the display too. |
 | 🚀 **Autostart** | "Run at Windows startup" toggle right in the menu. |
 | 💾 **Remembers state** | The last mode is restored on the next launch. |
-| 🌍 **Localized** | English and Russian, picked from your Windows language. |
+| 🌍 **Localized** | English and Russian interface, picked from your Windows language. |
 | ⌨️ **CLI** | All the original command-line options still work for scripts. |
 
 ## 🚀 Usage
@@ -95,7 +95,7 @@ Changes are applied immediately while Awake is running. Custom timer presets are
 `mode`: `0` = Off, `1` = Indefinitely, `2` = Interval, `3` = Until date/time.
 Logs are written to `%LOCALAPPDATA%\Awake\Logs` and kept for 14 days.
 
-## ⌨️ Command line
+## 💻 Command line
 
 Run without arguments to start the tray app. With arguments, Awake runs a one-off session:
 
@@ -114,7 +114,7 @@ Awake.exe -e "2026-12-31 18:00"      # until a moment in time
 Awake.exe -p 1234                    # while process 1234 is alive
 ```
 
-## ⚙️ How it works
+## 🔍 How it works
 
 Awake calls the Win32 API
 [`SetThreadExecutionState`](https://learn.microsoft.com/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate)
@@ -131,9 +131,8 @@ switched off or closed. You can check it with `powercfg /requests`.
 | Tray menu without PowerToys | ❌ | ✅ |
 | Run at startup toggle | via PowerToys | ✅ in the menu |
 | Single portable exe | ❌ | ✅ |
-| Russian UI | ✅ | ✅ |
 
-## 🛠️ Building from source
+## 🔧 Building from source
 
 Requires the [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0).
 
@@ -153,6 +152,7 @@ a GitHub release automatically.
 
 Bug reports and pull requests are welcome. Please open an
 [issue](https://github.com/varsoug/awake-standalone/issues) first for larger changes.
+Translation fixes for this README are welcome too.
 
 ## 📄 License and credits
 

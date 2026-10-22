@@ -1,6 +1,6 @@
 <div align="center">
 
-[🇬🇧 English](README.md) | **🇷🇺 Русский**
+[🇬🇧 English](README.md) | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | [🇰🇷 한국어](README.ko.md) | **🇷🇺 Русский** | [🇺🇦 Українська](README.uk.md)
 
 <img src="docs/logo.png" width="112" alt="Логотип Awake">
 
@@ -13,6 +13,7 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/varsoug/awake-standalone/build.yml?branch=main&style=flat-square)](https://github.com/varsoug/awake-standalone/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/github/license/varsoug/awake-standalone?style=flat-square)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4?style=flat-square&logo=windows)
+![.NET](https://img.shields.io/badge/.NET-9-512bd4?style=flat-square&logo=dotnet)
 
 [**Скачать**](https://github.com/varsoug/awake-standalone/releases/latest/download/Awake.exe) ·
 [Возможности](#-возможности) ·
@@ -40,7 +41,7 @@ Awake — небольшая утилита из [Microsoft PowerToys](https://g
 | 🖥️ **Экран** | Не давать уснуть только системе или ещё и экрану. |
 | 🚀 **Автозапуск** | Переключатель «Запускать вместе с Windows» прямо в меню. |
 | 💾 **Помнит режим** | Последний режим восстанавливается при следующем запуске. |
-| 🌍 **Русский язык** | Выбирается автоматически по языку Windows. |
+| 🌍 **Русский язык** | Интерфейс на русском и английском, выбирается по языку Windows. |
 | ⌨️ **CLI** | Все параметры командной строки оригинала работают. |
 
 ## 🚀 Использование
@@ -48,6 +49,20 @@ Awake — небольшая утилита из [Microsoft PowerToys](https://g
 1. [Скачай `Awake.exe`](https://github.com/varsoug/awake-standalone/releases/latest/download/Awake.exe).
 2. Положи в любую папку (например, `C:\Tools\Awake`) и запусти.
 3. Нажми на значок ☕ в трее и выбери режим.
+
+```text
+ Не засыпать в течение…          ▸  30 минут / 1 час / 2 часа
+ Не засыпать до заданной даты и времени
+ Не засыпать бессрочно
+ Выкл. (использовать схему электропитания)
+ ───────────────────────────────
+ Не выключать экран
+ ───────────────────────────────
+ Запускать вместе с Windows
+ Открыть файл настроек
+ ───────────────────────────────
+ Выход
+```
 
 > [!TIP]
 > При первом запуске SmartScreen может предупредить о неизвестном приложении: файл не подписан
@@ -65,7 +80,7 @@ Awake — небольшая утилита из [Microsoft PowerToys](https://g
 ### Файл настроек
 
 Настройки лежат в `%LOCALAPPDATA%\Awake\settings.json` (меню → **Открыть файл настроек**).
-Изменения применяются сразу. Свои таймеры задаются в секундах:
+Изменения применяются сразу, пока Awake запущен. Свои таймеры задаются в секундах:
 
 ```json
 {
@@ -80,7 +95,7 @@ Awake — небольшая утилита из [Microsoft PowerToys](https://g
 `mode`: `0` — выкл., `1` — бессрочно, `2` — по таймеру, `3` — до даты.
 Логи пишутся в `%LOCALAPPDATA%\Awake\Logs` и хранятся 14 дней.
 
-## ⌨️ Командная строка
+## 💻 Командная строка
 
 Без аргументов запускается приложение в трее. С аргументами — разовый сеанс:
 
@@ -99,7 +114,7 @@ Awake.exe -e "2026-12-31 18:00"      # до заданного момента
 Awake.exe -p 1234                    # пока жив процесс 1234
 ```
 
-## ⚙️ Как это работает
+## 🔍 Как это работает
 
 Awake вызывает Win32 API
 [`SetThreadExecutionState`](https://learn.microsoft.com/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate)
@@ -107,7 +122,17 @@ Awake вызывает Win32 API
 Схема электропитания не меняется, и всё возвращается как было, как только Awake выключен или
 закрыт. Проверить можно командой `powercfg /requests`.
 
-## 🛠️ Сборка из исходников
+## 🔁 Отличия от PowerToys Awake
+
+| | PowerToys Awake | Этот форк |
+|---|:---:|:---:|
+| Нужен установленный PowerToys | ✅ | ❌ |
+| Телеметрия | ✅ | ❌ |
+| Меню в трее без PowerToys | ❌ | ✅ |
+| Автозапуск | через PowerToys | ✅ в меню |
+| Один переносимый exe | ❌ | ✅ |
+
+## 🔧 Сборка из исходников
 
 Нужен [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0).
 
@@ -119,6 +144,14 @@ dotnet publish src/Awake/Awake.csproj -c Release -r win-x64 --self-contained tru
   -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true `
   -p:IncludeNativeLibrariesForSelfExtract=true -o publish/win-x64
 ```
+
+Результат — `publish/win-x64/Awake.exe`. При отправке тега вида `v1.2.3` релиз на GitHub
+собирается и публикуется автоматически.
+
+## 🤝 Участие
+
+Сообщения об ошибках и pull request'ы приветствуются. Для крупных изменений сначала создай
+[issue](https://github.com/varsoug/awake-standalone/issues). Исправления переводов README тоже.
 
 ## 📄 Лицензия и авторы
 
