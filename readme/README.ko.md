@@ -1,8 +1,8 @@
 <div align="center">
 
-[🇬🇧 English](README.md) | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | **🇰🇷 한국어** | [🇷🇺 Русский](README.ru.md) | [🇺🇦 Українська](README.uk.md)
+[🇬🇧 English](../README.md) | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | **🇰🇷 한국어** | [🇷🇺 Русский](README.ru.md) | [🇺🇦 Українська](README.uk.md)
 
-<img src="docs/logo.png" width="112" alt="Awake 로고">
+<img src="../docs/logo.png" width="112" alt="Awake 로고">
 
 # Awake — standalone
 
@@ -11,7 +11,7 @@
 [![Release](https://img.shields.io/github/v/release/varsoug/awake-standalone?style=flat-square&color=2ea44f)](https://github.com/varsoug/awake-standalone/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/varsoug/awake-standalone/total?style=flat-square&color=0078d4)](https://github.com/varsoug/awake-standalone/releases)
 [![Build](https://img.shields.io/github/actions/workflow/status/varsoug/awake-standalone/build.yml?branch=main&style=flat-square)](https://github.com/varsoug/awake-standalone/actions/workflows/build.yml)
-[![License: MIT](https://img.shields.io/github/license/varsoug/awake-standalone?style=flat-square)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/varsoug/awake-standalone?style=flat-square)](../LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4?style=flat-square&logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-9-512bd4?style=flat-square&logo=dotnet)
 
@@ -144,7 +144,7 @@ dotnet publish src/Awake/Awake.csproj -c Release -r win-x64 --self-contained tru
 
 Awake는 [Den Delimarsky](https://den.dev)가
 [Microsoft PowerToys](https://github.com/microsoft/PowerToys)의 일부로 만들었습니다.
-이 포크는 동일한 [MIT 라이선스](LICENSE)로 배포되며, Microsoft와 관련이 없고 Microsoft의 보증을 받지 않았습니다.
+이 포크는 동일한 [MIT 라이선스](../LICENSE)로 배포되며, Microsoft와 관련이 없고 Microsoft의 보증을 받지 않았습니다.
 
 <div align="center">
 

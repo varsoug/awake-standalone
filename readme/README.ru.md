@@ -1,8 +1,8 @@
 <div align="center">
 
-[🇬🇧 English](README.md) | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | [🇰🇷 한국어](README.ko.md) | **🇷🇺 Русский** | [🇺🇦 Українська](README.uk.md)
+[🇬🇧 English](../README.md) | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | [🇰🇷 한국어](README.ko.md) | **🇷🇺 Русский** | [🇺🇦 Українська](README.uk.md)
 
-<img src="docs/logo.png" width="112" alt="Логотип Awake">
+<img src="../docs/logo.png" width="112" alt="Логотип Awake">
 
 # Awake — standalone
 
@@ -11,7 +11,7 @@
 [![Release](https://img.shields.io/github/v/release/varsoug/awake-standalone?style=flat-square&color=2ea44f)](https://github.com/varsoug/awake-standalone/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/varsoug/awake-standalone/total?style=flat-square&color=0078d4)](https://github.com/varsoug/awake-standalone/releases)
 [![Build](https://img.shields.io/github/actions/workflow/status/varsoug/awake-standalone/build.yml?branch=main&style=flat-square)](https://github.com/varsoug/awake-standalone/actions/workflows/build.yml)
-[![License: MIT](https://img.shields.io/github/license/varsoug/awake-standalone?style=flat-square)](LICENSE)
+[![License: MIT](https://img.shields.io/github/license/varsoug/awake-standalone?style=flat-square)](../LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078d4?style=flat-square&logo=windows)
 ![.NET](https://img.shields.io/badge/.NET-9-512bd4?style=flat-square&logo=dotnet)
 
@@ -157,7 +157,7 @@ dotnet publish src/Awake/Awake.csproj -c Release -r win-x64 --self-contained tru
 
 Awake создал [Den Delimarsky](https://den.dev) в составе
 [Microsoft PowerToys](https://github.com/microsoft/PowerToys).
-Форк распространяется под той же [лицензией MIT](LICENSE) и не связан с Microsoft.
+Форк распространяется под той же [лицензией MIT](../LICENSE) и не связан с Microsoft.
 
 <div align="center">
 

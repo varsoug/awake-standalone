@@ -1,6 +1,6 @@
 <div align="center">
 
-**🇬🇧 English** | [🇨🇳 简体中文](README.zh-CN.md) | [🇪🇸 Español](README.es.md) | [🇧🇷 Português](README.pt-BR.md) | [🇩🇪 Deutsch](README.de.md) | [🇫🇷 Français](README.fr.md) | [🇯🇵 日本語](README.ja.md) | [🇰🇷 한국어](README.ko.md) | [🇷🇺 Русский](README.ru.md) | [🇺🇦 Українська](README.uk.md)
+**🇬🇧 English** | [🇨🇳 简体中文](readme/README.zh-CN.md) | [🇪🇸 Español](readme/README.es.md) | [🇧🇷 Português](readme/README.pt-BR.md) | [🇩🇪 Deutsch](readme/README.de.md) | [🇫🇷 Français](readme/README.fr.md) | [🇯🇵 日本語](readme/README.ja.md) | [🇰🇷 한국어](readme/README.ko.md) | [🇷🇺 Русский](readme/README.ru.md) | [🇺🇦 Українська](readme/README.uk.md)
 
 <img src="docs/logo.png" width="112" alt="Awake logo">
 
