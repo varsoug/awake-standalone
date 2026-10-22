@@ -35,9 +35,6 @@ namespace Awake.Core.Native
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern void FreeConsole();
 
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        internal static extern IntPtr GetModuleHandle(string? lpModuleName);
-
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern bool SetStdHandle(int nStdHandle, IntPtr hHandle);
 
