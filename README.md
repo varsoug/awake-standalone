@@ -1,5 +1,7 @@
 <div align="center">
 
+**🇬🇧 English** | [🇷🇺 Русский](README.ru.md)
+
 <img src="docs/logo.png" width="112" alt="Awake logo">
 
 # Awake — standalone
@@ -17,8 +19,7 @@
 [Features](#-features) ·
 [Usage](#-usage) ·
 [Command line](#-command-line) ·
-[Building](#-building-from-source) ·
-[Русский](README.ru.md)
+[Building](#-building-from-source)
 
 </div>
 

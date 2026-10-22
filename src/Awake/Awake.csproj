@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -10,7 +10,7 @@
     <DisableWinExeOutputInference>true</DisableWinExeOutputInference>
     <AssemblyName>Awake</AssemblyName>
     <RootNamespace>Awake</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Product>Awake (standalone)</Product>
     <Description>Standalone fork of PowerToys Awake - keeps your computer awake without PowerToys.</Description>
     <Copyright>Copyright (c) Microsoft Corporation. Licensed under the MIT license.</Copyright>
