@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseWindowsForms>False</UseWindowsForms>
+    <!--Per documentation: https://learn.microsoft.com/dotnet/core/compatibility/windows-forms/5.0/automatically-infer-winexe-output-type#outputtype-set-to-winexe-for-wpf-and-winforms-apps -->
+    <DisableWinExeOutputInference>true</DisableWinExeOutputInference>
+    <AssemblyName>Awake</AssemblyName>
+    <RootNamespace>Awake</RootNamespace>
+    <Version>1.0.0</Version>
+    <Product>Awake (standalone)</Product>
+    <Description>Standalone fork of PowerToys Awake - keeps your computer awake without PowerToys.</Description>
+    <Copyright>Copyright (c) Microsoft Corporation. Licensed under the MIT license.</Copyright>
+
+    <ApplicationIcon>Assets\Awake\Awake.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <SatelliteResourceLanguages>en;ru</SatelliteResourceLanguages>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="9.0.10" />
+    <PackageReference Include="System.CommandLine" Version="2.0.1" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.10" />
+    <PackageReference Include="System.Reactive" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Awake\*.ico" />
+    <!-- Tray icons are embedded so the app can be shipped as a single .exe -->
+    <EmbeddedResource Include="Assets\Awake\*.ico" LogicalName="%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>Awake.UnitTests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AWAKE_EXIT" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="AWAKE_HOUR" xml:space="preserve">
+    <value>{0} час</value>
+  </data>
+  <data name="AWAKE_HOURS" xml:space="preserve">
+    <value>{0} часа</value>
+  </data>
+  <data name="AWAKE_KEEP_INDEFINITELY" xml:space="preserve">
+    <value>Не засыпать бессрочно</value>
+  </data>
+  <data name="AWAKE_KEEP_ON_INTERVAL" xml:space="preserve">
+    <value>Не засыпать в течение…</value>
+  </data>
+  <data name="AWAKE_KEEP_SCREEN_ON" xml:space="preserve">
+    <value>Не выключать экран</value>
+  </data>
+  <data name="AWAKE_KEEP_UNTIL_EXPIRATION" xml:space="preserve">
+    <value>Не засыпать до заданной даты и времени</value>
+  </data>
+  <data name="AWAKE_MINUTE" xml:space="preserve">
+    <value>{0} минута</value>
+  </data>
+  <data name="AWAKE_MINUTES" xml:space="preserve">
+    <value>{0} минут</value>
+  </data>
+  <data name="AWAKE_OFF" xml:space="preserve">
+    <value>Выкл. (использовать схему электропитания)</value>
+  </data>
+  <data name="AWAKE_TRAY_TEXT_EXPIRATION" xml:space="preserve">
+    <value>До срока</value>
+  </data>
+  <data name="AWAKE_TRAY_TEXT_INDEFINITE" xml:space="preserve">
+    <value>Бессрочно</value>
+  </data>
+  <data name="AWAKE_TRAY_TEXT_OFF" xml:space="preserve">
+    <value>Выключено</value>
+  </data>
+  <data name="AWAKE_TRAY_TEXT_TIMED" xml:space="preserve">
+    <value>По таймеру</value>
+  </data>
+  <data name="AWAKE_SCREEN_ON" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
+  <data name="AWAKE_SCREEN_OFF" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="AWAKE_TRAY_DISPLAY" xml:space="preserve">
+    <value>Экран</value>
+  </data>
+  <data name="AWAKE_TRAY_UNTIL" xml:space="preserve">
+    <value>До</value>
+  </data>
+  <data name="AWAKE_TRAY_REMAINING" xml:space="preserve">
+    <value>осталось</value>
+  </data>
+  <data name="AWAKE_RUN_AT_STARTUP" xml:space="preserve">
+    <value>Запускать вместе с Windows</value>
+  </data>
+  <data name="AWAKE_OPEN_SETTINGS_FOLDER" xml:space="preserve">
+    <value>Открыть файл настроек</value>
+  </data>
+</root>
