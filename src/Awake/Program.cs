@@ -25,8 +25,6 @@ namespace Awake
 {
     internal sealed class Program
     {
-        private static readonly JsonSerializerOptions _serializerOptions = new() { IncludeFields = true };
-
         private static FileSystemWatcher? _watcher;
         private static SettingsUtils? _settingsUtils;
         private static EventWaitHandle? _exitEventHandle;
@@ -103,7 +101,7 @@ namespace Awake
                 // To make it easier to diagnose future issues, let's get the
                 // system power capabilities and aggregate them in the log.
                 Bridge.GetPwrCapabilities(out _powerCapabilities);
-                Logger.LogInfo(JsonSerializer.Serialize(_powerCapabilities, _serializerOptions));
+                Logger.LogInfo(JsonSerializer.Serialize(_powerCapabilities, AwakeJsonContext.Default.SystemPowerCapabilities));
 
                 return await parseResult.InvokeAsync();
             }
@@ -328,7 +326,7 @@ namespace Awake
                         Logger.LogError("The settings file does not exist. Scaffolding default configuration...");
 
                         AwakeSettings scaffoldSettings = new();
-                        _settingsUtils.SaveSettings(JsonSerializer.Serialize(scaffoldSettings), Core.Constants.AppName);
+                        _settingsUtils.SaveSettings(SettingsUtils.Serialize(scaffoldSettings), Core.Constants.AppName);
                     }
 
                     ScaffoldConfiguration(settingsPath);
@@ -548,7 +546,7 @@ namespace Awake
                         if (settings.Properties.ExpirationDateTime <= DateTimeOffset.Now)
                         {
                             settings.Properties.ExpirationDateTime = DateTimeOffset.Now.AddMinutes(5);
-                            _settingsUtils.SaveSettings(JsonSerializer.Serialize(settings), Core.Constants.AppName);
+                            _settingsUtils.SaveSettings(SettingsUtils.Serialize(settings), Core.Constants.AppName);
 
                             // Return here - the FileSystemWatcher will re-trigger ProcessSettings
                             // with the corrected expiration time, which will then call SetExpirableKeepAwake.

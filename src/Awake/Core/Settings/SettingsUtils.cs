@@ -18,18 +18,14 @@ namespace Awake.Core.Settings
         private const int MaxReadAttempts = 5;
         private const int ReadRetryDelayMs = 50;
 
-        private static readonly JsonSerializerOptions _readOptions = new()
-        {
-            PropertyNameCaseInsensitive = true,
-            ReadCommentHandling = JsonCommentHandling.Skip,
-            AllowTrailingCommas = true,
-        };
-
-        private static readonly JsonSerializerOptions _writeOptions = new() { WriteIndented = true };
-
         private readonly Lock _fileLock = new();
 
         internal static SettingsUtils Default { get; } = new();
+
+        internal static string Serialize(AwakeSettings settings)
+        {
+            return JsonSerializer.Serialize(settings, AwakeJsonContext.Default.AwakeSettings);
+        }
 
         internal string GetSettingsFilePath(string appName)
         {
@@ -61,7 +57,7 @@ namespace Awake.Core.Settings
                         json = reader.ReadToEnd();
                     }
 
-                    return JsonSerializer.Deserialize<T>(json, _readOptions);
+                    return JsonSerializer.Deserialize(json, typeof(T), AwakeJsonContext.Default) as T;
                 }
                 catch (Exception ex) when (ex is IOException or JsonException)
                 {
@@ -86,12 +82,16 @@ namespace Awake.Core.Settings
             {
                 // Re-format so that the file stays readable for people editing it by hand.
                 using JsonDocument document = JsonDocument.Parse(jsonSettings);
-                string formatted = JsonSerializer.Serialize(document.RootElement, _writeOptions);
+                using MemoryStream buffer = new();
+                using (Utf8JsonWriter writer = new(buffer, new JsonWriterOptions { Indented = true }))
+                {
+                    document.RootElement.WriteTo(writer);
+                }
 
                 lock (_fileLock)
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-                    File.WriteAllText(path, formatted);
+                    File.WriteAllBytes(path, buffer.ToArray());
                 }
             }
             catch (Exception ex)
